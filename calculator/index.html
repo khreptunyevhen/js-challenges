@@ -3,9 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Simple Calculator</title>
   </head>
   <body>
-    <h1>Calculator</h1>
+    <!-- <h1 class="title">Simple Calculator</h1> -->
+    <div class="calculator">
+      <div class="output">
+        <div class="previous-value"></div>
+        <div class="current-value"></div>
+      </div>
+      <div class="body">
+        <button data-number>7</button>
+        <button class="between" data-number>8</button>
+        <button data-number>9</button>
+        <button class="around" data-number>4</button>
+        <button class="around" data-number>5</button>
+        <button class="around" data-number>6</button>
+        <button class="around" data-number>3</button>
+        <button class="around" data-number>2</button>
+        <button class="around" data-number>1</button>
+        <button class="border-left" data-number>.</button>
+        <button class="between" data-number>0</button>
+        <button class="equel" data-result>=</button>
+        <div class="body-operations">
+          <button data-clear>AC</button>
+          <button data-delete>DEL</button>
+          <button data-operation>-</button>
+          <button data-operation>÷</button>
+          <button data-operation>×</button>
+          <button data-operation>+</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
