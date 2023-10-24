@@ -155,6 +155,10 @@ h1 {
   display: none;
 }
 
+.input-block p {
+  margin-top: 20px;
+}
+
 .game-input {
   padding: 10px;
   margin: 0 auto;
