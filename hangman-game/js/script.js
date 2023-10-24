@@ -147,7 +147,6 @@ function showResult(result) {
 
 // Handle press key
 window.addEventListener("keydown", (e) => {
-  console.log(window.innerWidth);
   if (isPlay && window.innerWidth >= WIDTH_FOR_SHOW_INPUT) {
     const letterCode = e.keyCode;
     let letter = e.key;

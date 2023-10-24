@@ -166,13 +166,13 @@ h1 {
   text-align: center;
 }
 
-.hide-input {
+.input-block.hide-input {
   display: none;
 }
 
 /* Show input for smaller screens (e.g., phones and tablets) */
 @media (max-width: 768px) {
-  .hide-input {
+  .input-block.hide-input {
     display: block;
   }
 }
