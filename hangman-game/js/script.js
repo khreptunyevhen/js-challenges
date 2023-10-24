@@ -5,6 +5,8 @@ const resultPopup = document.querySelector(".notification-popup");
 const hintEl = document.querySelector(".hint");
 const inputEl = document.querySelector("input");
 
+const WIDTH_FOR_SHOW_INPUT = 768;
+
 const words = [
   {
     question: "What car manufacturer had the highest revenue in 2020?",
@@ -145,7 +147,8 @@ function showResult(result) {
 
 // Handle press key
 window.addEventListener("keydown", (e) => {
-  if (isPlay) {
+  console.log(window.innerWidth);
+  if (isPlay && window.innerWidth >= WIDTH_FOR_SHOW_INPUT) {
     const letterCode = e.keyCode;
     let letter = e.key;
     const word = randomWords.word.toLowerCase();
