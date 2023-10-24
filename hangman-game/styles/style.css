@@ -155,7 +155,7 @@ h1 {
   display: none;
 }
 
-input {
+.game-input {
   padding: 10px;
   margin: 0 auto;
   margin-top: 20px;
