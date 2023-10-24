@@ -3,6 +3,7 @@ const questionEl = document.querySelector(".question");
 const playBtn = document.querySelector(".play-button");
 const resultPopup = document.querySelector(".notification-popup");
 const hintEl = document.querySelector(".hint");
+const inputEl = document.querySelector("input");
 
 const words = [
   {
@@ -162,7 +163,6 @@ window.addEventListener("keydown", (e) => {
       } else {
         if (!wrongLetters.includes(letter)) {
           wrongLetters.push(letter);
-
           updateWrong();
         } else {
           showNotification();
@@ -171,6 +171,42 @@ window.addEventListener("keydown", (e) => {
     }
   }
 });
+
+// Input type for mobile phone
+inputEl.addEventListener("input", (e) => {
+  if (isPlay) {
+    let letter = e.data; // Get the typed character
+
+    if (letter) {
+      const word = randomWords.word.toLowerCase();
+
+      letter = letter.toLowerCase();
+
+      if (isLetter(letter)) {
+        if (word.includes(letter)) {
+          if (!correctLetters.includes(letter)) {
+            correctLetters.push(letter);
+            displayQuestion();
+          } else {
+            showNotification();
+          }
+        } else {
+          if (!wrongLetters.includes(letter)) {
+            wrongLetters.push(letter);
+            updateWrong();
+          } else {
+            showNotification();
+          }
+        }
+      }
+    }
+  }
+});
+
+// Check if the input is a letter
+function isLetter(letter) {
+  return /^[a-z]$/.test(letter);
+}
 
 // Play again
 playBtn.addEventListener("click", () => {
@@ -187,11 +223,12 @@ playBtn.addEventListener("click", () => {
   updateWrong();
 
   document.querySelector(".overlay").style.display = "none";
+  inputEl.value = "";
 });
-
-displayQuestion();
 
 // Show or hide hint
 questionEl.addEventListener("click", () => {
   hintEl.classList.toggle("active");
 });
+
+displayQuestion();

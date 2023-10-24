@@ -154,3 +154,10 @@ h1 {
 .figure-part {
   display: none;
 }
+
+input {
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
